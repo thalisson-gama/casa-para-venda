@@ -9,7 +9,7 @@
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5NL6N28Z');</script>
+  })(window,document,'script','dataLayer','GTM-PKXJ84S6');</script>
   <!-- End Google Tag Manager -->
 
   <meta name="theme-color" content="#0E2A4A" />
@@ -1467,7 +1467,7 @@
 </head>
 <body>
 
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NL6N28Z"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKXJ84S6"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- TOP BANNER -->
@@ -2073,7 +2073,7 @@
         <h3>Não é exatamente essa casa que você procura?</h3>
         <p>Se sua intenção é construir do zero com financiamento da Caixa em outro terreno, a E3C também conduz construção financiada completa — projeto, documentação, obra e habite-se na sua mão.</p>
       </div>
-      <a href="#" class="btn btn-outline-dark">Ver construção financiada</a>
+      <a href="https://construcao-financiada-e3c.pages.dev/" class="btn btn-outline-dark" target="_blank" rel="noopener">Ver construção financiada</a>
     </div>
   </section>
 
@@ -2211,7 +2211,7 @@
     }
 
     /* WEBHOOK */
-    const WEBHOOK_URL = 'https://m2black.atenderbem.com/webhookcapture/capture/e713ba340f1d43f9a97f20faab1afa7f';
+    const WEBHOOK_URL = 'https://nlvjlgjztngiixcpumfe.supabase.co/functions/v1/lp-lead-webhook?token=8d727ec9-3a3a-4efc-ae5d-e27dd0b74450';
 
     (function persistUTMs() {
       const params = new URLSearchParams(window.location.search);
@@ -2262,19 +2262,8 @@
       const utms = getUTMs();
 
       const payload = {
-        Nome:     document.getElementById('nome').value.trim(),
-        Email:    document.getElementById('email').value.trim(),
-        WhatsApp: whatsappDigits,
-
-        cidade_atual:   document.getElementById('cidade').value.trim(),
-        perfil:         getSelectLabel('perfil'),
-        forma_pagamento: getSelectLabel('pagamento'),
-        prazo_decisao:  getSelectLabel('decisao'),
-        melhor_contato: getSelectLabel('contato'),
-
         Nome_do_site:   'E3C Engenharia',
         Nome_da_pagina: document.title,
-        Origem_landing: 'Casa Alto Padrão Jundiaí',
         URL_da_pagina:  window.location.href,
         Data:           dt.Data,
         Horario:        dt.Horario,
@@ -2283,7 +2272,17 @@
         utm_medium:   utms.utm_medium,
         utm_campaign: utms.utm_campaign,
         utm_term:     utms.utm_term,
-        utm_content:  utms.utm_content
+        utm_content:  utms.utm_content,
+
+        Nome:     document.getElementById('nome').value.trim(),
+        Email:    document.getElementById('email').value.trim(),
+        WhatsApp: whatsappDigits,
+
+        cidade_atual:    document.getElementById('cidade').value.trim(),
+        perfil:          getSelectLabel('perfil'),
+        forma_pagamento: getSelectLabel('pagamento'),
+        prazo_decisao:   getSelectLabel('decisao'),
+        melhor_contato:  getSelectLabel('contato')
       };
 
       window.dataLayer = window.dataLayer || [];
@@ -2303,7 +2302,7 @@
         showSuccess();
       })
       .catch((err) => {
-        console.warn('Webhook AtenderBem falhou:', err);
+        console.warn('Webhook M2 falhou:', err);
         showSuccess();
       });
 
